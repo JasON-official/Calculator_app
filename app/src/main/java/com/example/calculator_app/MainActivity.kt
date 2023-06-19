@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Find the buttons and TextView
         val zeroButton = findViewById<Button>(R.id.zero_button)
         val oneButton = findViewById<Button>(R.id.one_button)
         val twoButton = findViewById<Button>(R.id.two_button)
@@ -26,7 +27,72 @@ class MainActivity : AppCompatActivity() {
         val minusButton = findViewById<Button>(R.id.minus_button)
         val multiplyButton = findViewById<Button>(R.id.multiply_button)
         val divisionButton = findViewById<Button>(R.id.division_button)
+        val pointButton = findViewById<Button>(R.id.point_button)
 
         val resultTextView = findViewById<TextView>(R.id.resultTextView)
+
+        //Initialize StringBuilder
+        val numberStringBuilder = StringBuilder()
+
+        //Initialization of button listeners from 0 to 9
+        zeroButton.setOnClickListener {
+            numberStringBuilder.append(0)
+
+            resultTextView.text = numberStringBuilder
+        }
+
+        oneButton.setOnClickListener {
+            numberStringBuilder.append(1)
+
+            resultTextView.text = numberStringBuilder
+        }
+
+        twoButton.setOnClickListener {
+            numberStringBuilder.append(2)
+
+            resultTextView.text = numberStringBuilder
+        }
+
+        threeButton.setOnClickListener {
+            numberStringBuilder.append(3)
+
+            resultTextView.text = numberStringBuilder
+        }
+
+        fourButton.setOnClickListener {
+            numberStringBuilder.append(4)
+
+            resultTextView.text = numberStringBuilder
+        }
+
+        fiveButton.setOnClickListener {
+            numberStringBuilder.append(5)
+
+            resultTextView.text = numberStringBuilder
+        }
+
+        sixButton.setOnClickListener {
+            numberStringBuilder.append(6)
+
+            resultTextView.text = numberStringBuilder
+        }
+
+        sevenButton.setOnClickListener {
+            numberStringBuilder.append(7)
+
+            resultTextView.text = numberStringBuilder
+        }
+
+        eightButton.setOnClickListener {
+            numberStringBuilder.append(8)
+
+            resultTextView.text = numberStringBuilder
+        }
+
+        nineButton.setOnClickListener {
+            numberStringBuilder.append(9)
+
+            resultTextView.text = numberStringBuilder
+        }
     }
 }
