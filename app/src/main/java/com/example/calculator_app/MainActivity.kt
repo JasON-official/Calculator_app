@@ -94,5 +94,41 @@ class MainActivity : AppCompatActivity() {
 
             resultTextView.text = numberStringBuilder
         }
+
+        equalButton.setOnClickListener {
+            numberStringBuilder.append("=")
+
+            resultTextView.text = numberStringBuilder
+        }
+
+        pointButton.setOnClickListener {
+            numberStringBuilder.append(".")
+
+            resultTextView.text = numberStringBuilder
+        }
+
+        plusButton.setOnClickListener {
+            numberStringBuilder.append("+")
+
+            resultTextView.text = numberStringBuilder
+        }
+
+        minusButton.setOnClickListener {
+            numberStringBuilder.append("-")
+
+            resultTextView.text = numberStringBuilder
+        }
+
+        multiplyButton.setOnClickListener {
+            numberStringBuilder.append("*")
+
+            resultTextView.text = numberStringBuilder
+        }
+
+        divisionButton.setOnClickListener {
+            numberStringBuilder.append("/")
+
+            resultTextView.text = numberStringBuilder
+        }
     }
 }
