@@ -37,15 +37,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/point_button" />
 
-    <Button
-        android:id="@+id/division_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#0000FF"
-        android:text="/"
-        android:textColor="#FFFF00"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/zero_button" />
 
     <Button
         android:id="@+id/equal_button"
@@ -55,7 +46,7 @@
         android:text="="
         android:textColor="#FFFF00"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/division_button"
+        app:layout_constraintLeft_toRightOf="@id/zero_button"
         app:layout_constraintRight_toRightOf="parent" />
 
     <Button
@@ -180,5 +171,27 @@
         app:layout_constraintBottom_toTopOf="@id/minus_button"
         app:layout_constraintLeft_toRightOf="@id/six_button"
         app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/division_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#0000FF"
+        android:text="/"
+        android:textColor="#FFFF00"
+        app:layout_constraintBottom_toTopOf="@id/multiply_button"
+        app:layout_constraintLeft_toLeftOf="@id/multiply_button"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/clear_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#0000FF"
+        android:text="CLEAR"
+        android:textColor="#FFFF00"
+        app:layout_constraintBottom_toTopOf="@id/nine_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/division_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
