@@ -132,8 +132,14 @@ class MainActivity : AppCompatActivity() {
             resultTextView.text = numberStringBuilder
         }
 
-        val expression = Expression("1+2")
-        val expressionResult = expression.evaluate().numberValue
-        resultTextView.text = expressionResult.toString()
+        equalButton.setOnClickListener{
+            val stringExpression = numberStringBuilder.toString()
+            val expression = Expression(stringExpression)
+            val expressionResult = expression.evaluate().numberValue
+            resultTextView.text = expressionResult.toString()
+
+            numberStringBuilder.clear()
+            numberStringBuilder.append(expressionResult.toString())
+        }
     }
 }
