@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import com.ezylang.evalex.Expression
 
 class MainActivity : AppCompatActivity() {
@@ -27,9 +28,10 @@ class MainActivity : AppCompatActivity() {
         val plusButton = findViewById<Button>(R.id.plus_button)
         val minusButton = findViewById<Button>(R.id.minus_button)
         val multiplyButton = findViewById<Button>(R.id.multiply_button)
-        val divisionButton = findViewById<Button>(R.id.division_button)
+        val divideButton = findViewById<Button>(R.id.divide_button)
         val pointButton = findViewById<Button>(R.id.point_button)
         val clearButton = findViewById<Button>(R.id.clear_button)
+        val resetButton = findViewById<Button>(R.id.reset_button)
 
         val resultTextView = findViewById<TextView>(R.id.resultTextView)
 
@@ -121,25 +123,39 @@ class MainActivity : AppCompatActivity() {
             resultTextView.text = numberStringBuilder
         }
 
-        divisionButton.setOnClickListener {
+        divideButton.setOnClickListener {
             numberStringBuilder.append("/")
 
             resultTextView.text = numberStringBuilder
         }
 
         equalButton.setOnClickListener {
-            val stringExpression = numberStringBuilder.toString()
-            val expression = Expression(stringExpression)
-            val expressionResult = expression.evaluate().numberValue
-            resultTextView.text = expressionResult.toString()
+            try {
 
-            numberStringBuilder.clear()
-            numberStringBuilder.append(expressionResult.toString())
+                val stringExpression = numberStringBuilder.toString()
+                val expression = Expression(stringExpression)
+                val expressionResult = expression.evaluate().numberValue
+                resultTextView.text = expressionResult.toString()
+
+                numberStringBuilder.clear()
+                numberStringBuilder.append(expressionResult.toString())
+
+            } catch (t: Throwable) {
+                Toast.makeText(this@MainActivity, "Exception $t", Toast.LENGTH_LONG)
+                    .show()
+            }
+
         }
 
         clearButton.setOnClickListener {
             resultTextView.text = "0"
             numberStringBuilder.clear()
+        }
+
+        resetButton.setOnClickListener {
+            val lastIndex = numberStringBuilder.length - 1
+            numberStringBuilder.deleteCharAt(lastIndex)
+            resultTextView.text = numberStringBuilder
         }
     }
 }
